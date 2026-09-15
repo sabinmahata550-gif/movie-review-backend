@@ -8,7 +8,12 @@ import watchRoute from "./routes/watchRoute.js";
 const app = express();
 
 app.use(express.json());
-
+app.get("/", (req, res) => {
+    res.json({
+        success: true,
+        message: "Movie Review Backend is running 🚀"
+    });
+});
 app.use("/api/users", userRouter);
 app.use("/api/movies", movieRoutes);
 app.use("/api/reviews", reviewRoutes);
